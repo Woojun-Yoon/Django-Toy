@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+	<div class="card-header">
+		<h4 class="card-title"> {{ topic.subject }} </h4>
+	</div>
+	<div class="card-body">
+		<p class="card-text"> {{ topic.message }} </p>
+	</div>
+	<div class="card-footer">
+		<p class="card-text"> Writter: {{ topic.writter.username }} </p>
+		<p class="card-text"> Last_updated:  {{ topic.last_updated }} </p>
+	</div>
+</div>
+<div>
+	<button type="button" class="btn btn-primary" onclick="location.href='/'">목록으로</button>
+	<button type="button" class="btn btn-primary" onclick="location.href='/{{ topic.pk }}/delete'">삭제</button>
+</div>
+
+{% endblock %}

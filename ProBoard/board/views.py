@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Topic, Reply
 from django.http import HttpResponse
@@ -26,3 +27,14 @@ def new_topic(request):
         return redirect('/')
 
     return render(request,'new_topic.html',{'topics':topics})
+
+@login_required
+def detail_view(request, pk):
+	topic = get_object_or_404(Topic, pk=pk)
+	return render(request, 'detail.html', {'topic':topic})
+
+@login_required
+def topic_delete(request, pk):
+	topic = get_object_or_404(Topic, pk=pk)
+	topic.delete()
+	return redirect('/')

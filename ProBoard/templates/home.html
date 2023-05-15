@@ -13,7 +13,7 @@
 	</thead>
 	<tbody>
 		{% for topic in topics %}
-		<tr>
+		<tr class="text-center" style="cursor:pointer;" onclick="location.href='/{{ topic.id }}'">
 			<td>{{topic.writter.username }}</td>
 			<td>{{topic.subject }}</td>
 			<td>0</td>

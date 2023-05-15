@@ -25,4 +25,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('new/', views.new_topic, name='new_topic'), # Add new post page
     path('accounts/', include('accounts.urls')),
+    path('<int:pk>/', views.detail_view, name='detail'),
+    path('<int:pk>/delete/', views.topic_delete, name='topic_delete')
 ]
