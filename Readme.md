@@ -1,3 +1,20 @@
+# Django-Toy Project
+
+## A. Start Project
+1. Create virtual env
+2. Create Project and App
+3. install requirements
+
+## B. Build Project
+1. Implement board function
+2. Mapping DB(sqlite3)
+3. Implement login, logout, signup system
+4. Fix bugs(auth policy, UI)
+
+# How to Start?
+python -m venv Toyenv
+-> Make virtualenv
+
 source Toyenv/bin/activate
 -> Run virtualenv
 
